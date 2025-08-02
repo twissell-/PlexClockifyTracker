@@ -23,19 +23,19 @@ pip install git+https://github.com/twissell-/PlexClockifyTracker@master
 Import the module, configure it and register it into your flask app:
 
 ```python
-import plextoggltracker
+import plexclockifytracker
 from flask import Flask
 
 app = Flask("app")
 
-plextoggltracker.configure(
+plexclockifytracker.configure(
     clockify_api_key="your_api_key"),
     plex_username="your_plex_username",
     mapping=["your mapping configuration"],
 )
 
 app.register_blueprint(
-    plextoggltracker.webhook, url_prefix="your_prefix")
+    plexclockifytracker.webhook, url_prefix="your_prefix")
 )
 
 app.run(host="0.0.0.0", port=86000)
